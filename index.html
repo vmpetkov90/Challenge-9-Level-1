@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover stunning modern and historic homes nestled in nature. Home Lengo helps you search and explore unique properties with elegant architecture, serene landscapes, and luxurious design.">
+    <meta name="keywords" content="modern homes, luxury houses, real estate search, home finder, contemporary architecture, forest homes, minimalist houses, property listings, dream homes, architectural design">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/64038fda00.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <title>Home Lengo — Discover Modern & Luxury Homes in Nature</title>
+</head>
+
+<body>
+    <header class="lg:fixed w-full z-100 bg-white top-0">
+        <nav
+            class="lg:relative fixed z-100 bg-white w-full top-0 flex justify-between items-center py-5 2xl:px-25 xl:px-8 px-4 shadow-xl/4">
+            <div class="flex items-center">
+                <a id="logo" class="w-42 2xl:mr-23 xl:mr-12 mr-8" href="">
+                    <img src="img/logo.png" alt="Home Lengo logo with house inside location pin and tagline 'Searching homes'">
+                </a>
+                <ul class="hidden lg:block">
+                    <li class="inline xl:mr-15 lg:mr-7 font-medium"><a class="border-b-2 border-blue-500"
+                            href="">Home</a></li>
+                    <li class="inline xl:mr-15 lg:mr-7 font-medium"><a
+                            class="border-b-2 border-transparent hover:border-blue-500 duration-300"
+                            href="">Listings</a></li>
+                    <li class="inline xl:mr-15 lg:mr-7 font-medium"><a
+                            class="border-b-2 border-transparent hover:border-blue-500 duration-300" href="">Blog</a>
+                    </li>
+                    <li class="inline xl:mr-15 lg:mr-7 font-medium"><a
+                            class="border-b-2 border-transparent hover:border-blue-500 duration-300"
+                            href="">Properties</a></li>
+                    <li class="inline xl:mr-15 lg:mr-7 font-medium"><a
+                            class="border-b-2 border-transparent hover:border-blue-500 duration-300" href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="register" class="hidden lg:block">
+                <a class="border border-blue-500 font-medium rounded-full py-4 xl:px-7 lg:px-5 px-3 ml-2 hover:bg-blue-600 hover:text-white duration-300"
+                    href=""><i class="fa-regular fa-user mr-2"></i>Sign In</a>
+                <a class="text-white bg-blue-600 font-medium rounded-full py-4 xl:px-7 lg:px-5 px-3 ml-2 hover:bg-blue-800 duration-300"
+                    href=""><i class="fa-regular fa-file mr-2"></i>Submit Property</a>
+            </div>
+            <a href="#" onclick="showMobileNav()" id="nav-button" class="lg:hidden z-1000"><i
+                    class="fa-solid fa-bars text-[32px]"></i></a>
+        </nav>
+        <nav id="mobile-nav" class="fixed top-0 bottom-0 left-0 right-0 bg-black/80 z-1000 w-0 overflow-hidden">
+            <div id="nav-container" class="max-w-80 -ml-80 h-full bg-white overflow-hidden duration-300">
+                <a id="logo" class="w-full block shadow-xl/5 p-4" href="">
+                    <img class="w-40" src="img/logo.png" alt="Home Lengo logo with house inside location pin and tagline 'Searching homes'">
+                </a>
+                <a class="border border-blue-500 font-medium rounded-full block p-3 mt-7 mx-4 text-center" href=""><i
+                        class="fa-regular fa-user mr-2"></i>Sign In</a>
+                <ul id="navigation" class="border-y border-black/10 mx-4 mt-7 py-5">
+                    <li class="my-5 font-medium"><a href="">Home</a></li>
+                    <li class="my-5 font-medium"><a href="">Listings</a></li>
+                    <li class="my-5 font-medium"><a href="">Blog</a></li>
+                    <li class="my-5 font-medium"><a href="">Properties</a></li>
+                    <li class="my-5 font-medium"><a href="">Contact</a></li>
+                </ul>
+                <a class="text-white bg-blue-600 font-medium rounded-full block p-3 my-7 mx-4 text-center" href=""><i
+                        class="fa-regular fa-file mr-2"></i>Submit Property</a>
+                <span class="block font-medium mx-4 border-y border-black/10 py-5">1-333-345-6868</span>
+                <span class="block font-medium mx-4 border-b border-black/10 py-5">homelengo@gmail.com</span>
+
+            </div>
+            <a href="#" onclick="showMobileNav()" id="nav-button" class="absolute top-0 right-0 mt-7 mr-4"><i
+                    class="fa-solid fa-bars text-[32px]"></i></a>
+        </nav>
+        <div id="search-bar" class="2xl:px-25 xl:px-8 px-4 xl:py-10 py-5 shadow-xl/4 lg:mt-0 mt-25">
+            <form action="" class="flex flex-wrap">
+                <input type="text" name="" id="" placeholder="Search Keyword"
+                    class="lg:flex-auto w-full lg:w-auto border border-black/10 rounded-full outline-0 py-4 xl:px-7 lg:px-5 px-3 lg:ml-3 lg:order-3 mb-5 lg:mb-0">
+                <input type="text" name="" id="" placeholder="Search Loacation"
+                    class="lg:flex-auto w-full lg:w-auto border border-black/10 rounded-full outline-0 py-4 xl:px-7 lg:px-5 px-3 lg:ml-3 lg:order-4 lg:order-3 mb-5 lg:mb-0">
+                <select name="cars" id="cars"
+                    class="lg:flex-auto w-full lg:w-auto border border-black/10 rounded-full outline-0 py-4 xl:px-7 lg:px-5 px-3 lg:ml-3 lg:order-5 lg:order-3 mb-5 lg:mb-0">
+                    <option value="all">All</option>
+                    <option value="villa">Villa</option>
+                    <option value="studio">Studio</option>
+                    <option value="office">Office</option>
+                    <option value="house">House</option>
+                </select>
+                <a href=""
+                    class="flex-auto text-center text-white bg-blue-600 font-medium rounded-full py-4 xl:px-7 lg:px-5 px-3 hover:bg-blue-800 duration-300 lg:order-1">For
+                    Rent</a>
+                <a href=""
+                    class="flex-auto text-center bg-black/10 font-medium rounded-full py-4 xl:px-7 lg:px-5 px-3 ml-3 hover:bg-blue-600 hover:text-white duration-300 lg:order-2">For
+                    Sale</a>
+                <a class="flex-auto border text-center border-blue-500 font-medium rounded-full py-4 xl:px-5 px-3 ml-3 hover:bg-blue-600 hover:text-white duration-300 lg:order-6"
+                    href=""><span class="xl:inline hidden">Advanced filter</span><i
+                        class="fa-solid fa-sliders xl:ml-1 ml-0"></i></a>
+                <button type="submit"
+                    class="flex-auto border border-blue-500 font-medium rounded-full py-4 xl:px-5 px-3 ml-3 cursor-pointer hover:bg-blue-600 hover:text-white duration-300 lg:order-7">
+                    <span class="xl:inline hidden">Search</span><i
+                        class="fa-solid fa-magnifying-glass xl:ml-1 ml-0"></i></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section id="properties"
+            class=" 2xl:pr-25 xl:pr-8 px-4 2xl:w-1/2 xl:w-4/7 w-full xl:float-right xl:mt-65 lg:mt-52 mt-5">
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-1.jpg"
+                        alt="Stone house on forested cliffside overlooking water under turquoise sky">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Sale</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">Echocliff Manor</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>2</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>1150</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        180 5th Ave, Brooklyn, NY 59084
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-1.jpg" alt="">
+                                <span class="text-black text-sm">John McCoy</span>
+                            </div>
+                            <span class="property-price font-medium">$5,250,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-2.jpg"
+                        alt="Historic-style building with red-tiled roof, central staircase, and manicured garden under clear blue sky">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Sale</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">Villa Rosenthal</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>4</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>950</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        265 Broadway, Brooklyn, NY 40889
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-2.jpg" alt="">
+                                <span class="text-black text-sm">James Hamilton</span>
+                            </div>
+                            <span class="property-price font-medium">$3,250,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-3.jpg"
+                        alt="Modern two-story house with large glass windows, flat roof, and pool on concrete patio">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Rent</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">Glassline Villa</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>4</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>1000</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        214 Park Ave, Manhattan, NY 23682
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-3.jpg" alt="">
+                                <span class="text-black text-sm">Amy Lopez</span>
+                            </div>
+                            <span class="property-price font-medium">$50,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-4.jpg"
+                        alt="Minimalist white house with flat roof, geometric design, and tiled path through manicured garden">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Sale</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">The Whiteform Residence</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>850</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        722 Houston St, Queens, NY 96945
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-2.jpg" alt="">
+                                <span class="text-black text-sm">James Hamilton</span>
+                            </div>
+                            <span class="property-price font-medium">$4,750,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-5.jpg"
+                        alt="Modern two-story house with glass windows, balcony, and garage in forested setting">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Rent</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">Stonebeam House</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>3</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>2</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>1200</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        169 Lexington Ave, Bronx, NY 45768
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-1.jpg" alt="">
+                                <span class="text-black text-sm">John McCoy</span>
+                            </div>
+                            <span class="property-price font-medium">$60,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="property block rounded-2xl border border-black/10 overflow-hidden sm:flex mb-7">
+                <div class="img-container relative sm:w-100">
+                    <img class="w-full h-full" src="img/property-6.jpg"
+                        alt="Modern two-story house with large windows, flat roof, and vibrant garden in forest setting">
+                    <div class="absolute top-0 m-3">
+                        <span class="featured bg-blue-600 rounded-full text-white px-3 py-1 text-sm">Featured</span>
+                        <span class="rent-sale featured bg-slate-500 rounded-full text-white px-3 py-1 text-sm">For
+                            Sale</span>
+                    </div>
+                </div>
+                <div class="property-description p-5 w-full">
+                    <h2 class="text-lg font-medium mb-3">Florence Grove</h2>
+                    <ul class="property-details flex mb-5">
+                        <li class="mr-4"><i class="fa-solid fa-bed mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Beds:</span>5</li>
+                        <li class="mr-4"><i class="fa-solid fa-bath mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Baths:</span>5</li>
+                        <li class="mr-4"><i class="fa-solid fa-ruler-combined mr-1 text-black/30"></i><span
+                                class="text-black/50 mr-1">Sqft:</span>1450</li>
+                    </ul>
+                    <address class="text-black/50 border-b border-black/10 pb-5">
+                        <i class="fa-solid fa-location-dot text-black/30"></i>
+                        5721 18th Avenue, Brooklyn, NY 11204
+                    </address>
+                    <div class="agent-price">
+                        <div class="property-agent flex items-center justify-between mt-5">
+                            <div class="img-container flex items-center">
+                                <img class="size-10 rounded-full mr-2" src="img/agent-1.jpg" alt="">
+                                <span class="text-black text-sm">John McCoy</span>
+                            </div>
+                            <span class="property-price font-medium">$6,250,000</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section id="map" class="xl:fixed! xl:top-65 bottom-0 2xl:w-1/2 xl:w-3/7 w-full xl:h-auto h-150 xl:mt-0 mt-5">
+
+        </section>
+    </main>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbxeDg2kSJeClKtQorq2UDD57vE6-tT-E&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_infowindows_v2"
+        defer></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
